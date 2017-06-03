@@ -164,13 +164,16 @@ public class KillCamReplay {
 	private static HashMap<Long, ArrayList<Packet<?>>> setupPackets(KillCamRecorder r) {
 
 		HashMap<Long, ArrayList<Packet<?>>> packets = new HashMap<>();
+		packets.putAll(r.packets);
+		
+		HashMap<Long, ArrayList<Packet<?>>> newpackets = new HashMap<>();
 
 		try {
-			for(long tick : r.packets.keySet()) {
+			for(long tick : packets.keySet()) {
 
 				ArrayList<Packet<?>> packetlist = new ArrayList<>();
 
-				for(Packet<?> packet : r.packets.get(tick)) {
+				for(Packet<?> packet : packets.get(tick)) {
 
 					if(PacketUtil.idpackets.contains(packet.getClass().getSimpleName())) {
 
@@ -184,14 +187,14 @@ public class KillCamReplay {
 
 				}
 
-				packets.put(tick, packetlist);
+				newpackets.put(tick, packetlist);
 
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return packets;
+		return newpackets;
 
 	}
 
