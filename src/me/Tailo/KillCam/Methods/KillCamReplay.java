@@ -132,7 +132,9 @@ public class KillCamReplay {
 											players.showPlayer(p);
 										}
 
-										cancel();
+										cancel();									
+
+										p.updateInventory();
 
 										Bukkit.getScheduler().scheduleSyncDelayedTask(main.instance, new Runnable() {
 											
