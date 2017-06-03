@@ -1,0 +1,5 @@
+name: KillCam
+author: Tailo
+version: 1.0
+
+main: me.Tailo.KillCam.System.main
