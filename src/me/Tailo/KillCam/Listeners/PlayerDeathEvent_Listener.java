@@ -25,7 +25,7 @@ public class PlayerDeathEvent_Listener implements Listener {
 		Player killer = e.getEntity().getKiller();
 		
 		p.setHealth(p.getMaxHealth());
-		p.setFoodLevel(10);
+		p.setFoodLevel(20);
 
 		if(killer != null) {
 			
